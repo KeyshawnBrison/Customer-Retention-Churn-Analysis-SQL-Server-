@@ -1,3 +1,11 @@
+/*
+Project: Customer Retention & Churn Analysis
+File: churn_analysis.sql
+Purpose: Calculate monthly customer churn rates
+Tool: SQL Server (SSMS)
+
+
+
 WITH customer_activity AS (
 SELECT
 CustomerID,
@@ -94,4 +102,5 @@ AS DECIMAL(5,2)
 FROM active_customers a
 LEFT JOIN churned_customers c
 ON a.activity_month = c.churn_month
+
 ORDER BY a.activity_month;
