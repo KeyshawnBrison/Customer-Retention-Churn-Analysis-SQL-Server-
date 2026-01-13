@@ -1,3 +1,10 @@
+/*
+Project: Customer Retention & Churn Analysis
+File: cohort_analysis.sql
+Purpose: Perform cohort-based customerretention analysis by group customer by their first purchase month and month-over-month retention
+Tool: SQL Server (SSMS)
+*/
+
 SELECT
 	CustomerID,
 	MIN(InvoiceDate) AS first_purchase_date
@@ -166,4 +173,5 @@ MAX(CASE WHEN cohort_index = 5 THEN retention_rate END) AS Month_5,
 MAX(CASE WHEN cohort_index = 6 THEN retention_rate END) AS Month_6
 FROM retention
 GROUP BY cohort_month
+
 ORDER BY cohort_month;
